@@ -1,10 +1,22 @@
 #include <iostream>
 
+#include "Game.h"
+
 using namespace std;
 
-int main() {
+void init() {
+    cout << "Initialising Game" << endl;
+}
 
-    cout << "Hello, world!" << endl;
+void term() {
+    cout << "Terminating Game" << endl;
+}
+
+int main() {
+    Game g = Game(8);
+    g.SetInitialise(init);
+    g.SetTerminate(term);
+    g.Run();
 
     return 0;
 }
