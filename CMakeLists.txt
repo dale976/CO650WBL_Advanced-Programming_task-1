@@ -7,7 +7,12 @@ project(ADVANCED_PROGRAMMING_TASK_1)
 set(CMAKE_CXX_STANDARD 14)
 
 # Explicitly Set the source files (you can switch this to wildcard if needed)
-file(GLOB SOURCES src/*.cpp)
+set(SOURCES
+        src/main.cpp
+        src/DrawableGameComponent.cpp
+        src/GameComponent.cpp
+        src/Game.cpp
+    )
 
 # Create the executable
 add_executable(GameApp ${SOURCES})
