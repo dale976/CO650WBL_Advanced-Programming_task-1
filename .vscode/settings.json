@@ -52,7 +52,9 @@
         "unordered_set": "cpp",
         "queue": "cpp",
         "__memory": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "charconv": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cmake.configureSettings": {
