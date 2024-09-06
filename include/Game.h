@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 #include <ctime>
-#include <iomanip> // for std::put_time
+#include <iomanip> 
 
 #include "GameComponent.h"
 
@@ -22,7 +22,6 @@ private:
     const int TICKS_1000MS;
 public:
     Game(int maxComponents) :TICKS_1000MS(1000) {
-        cout << "Game(), constructor" << endl;
         maxSize = maxComponents;
         components = new GameComponent* [maxComponents];
     };
@@ -36,11 +35,11 @@ public:
         };
     };
     void SetInitialise(FP init){
-        cout << "initialise address: " << addressof(init) << endl;
+        // cout << "initialise address: " << addressof(init) << endl;
         initialise = init;
     };
     void SetTerminate(FP term){
-        cout << "terminate address: " << addressof(initialise) << endl;
+        // cout << "terminate address: " << addressof(initialise) << endl;
         terminate = term;
     };
     tm* GetTimeNow() {
@@ -53,16 +52,15 @@ public:
         return localTime;
     };
 
+    /*
+        iterates through the components array invoking the component’s Update member functions. 
+        The time of invocation is passed as an argument to the Update member function. 
+        The component’s Update member function should be invoked once every second.
+        Should only execute 5 times.
+    */
     void Run(){
 
         initialise();
-        /*
-            iterates through the components array invoking the component’s Update member functions. 
-            The time of invocation is passed as an argument to the Update member function. 
-            The component’s Update member function should be invoked once every second.
-            Should only execute 5 times.
-        */
-        
         // every second, for 5 seconds, call the update function
         for(int j = 0; j < 5; j++) {
             for (int i = 0; i < componentCount; i++) {
