@@ -14,7 +14,13 @@ Game::Game(int maxComponents) :TICKS_1000MS(1000){
     components = new GameComponent* [maxComponents];
 }
 
-Game::~Game(){}
+Game::~Game(){
+    cout << "Game Destructor" << endl;
+    for(int i = 0; i < maxSize; i++) {
+        delete components[i];
+    }
+    components = nullptr;
+}
 
 void Game::Add(GameComponent* gc){
     if(componentCount < maxSize) {
