@@ -62,9 +62,10 @@ public:
             The component’s Update member function should be invoked once every second.
             Should only execute 5 times.
         */
-        for (int i = 0; i < componentCount; i++) {
-            // every second, for 5 seconds, call the update function
-            for(int j = 0; j < 5; j++) {
+        
+        // every second, for 5 seconds, call the update function
+        for(int j = 0; j < 5; j++) {
+            for (int i = 0; i < componentCount; i++) {
                 // call update
                 components[i]->Update(GetTimeNow());
                 // sleep for 1 second before next iteration

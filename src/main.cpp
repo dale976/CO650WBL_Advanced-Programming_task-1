@@ -25,7 +25,6 @@ int main() {
     g.Add(gc);
     g.Add(dgc);
 
-
     g.Run();
 
     return 0;

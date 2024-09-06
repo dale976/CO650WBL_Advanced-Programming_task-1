@@ -8,7 +8,7 @@ using namespace std;
 class GameComponent {
 private:
     int id;
-    int instances;
+    static int instances;
 public:
     GameComponent(){
         cout << "game component constructor" << endl;
@@ -16,8 +16,8 @@ public:
         id = instances;
     };
     ~GameComponent(){};
-    void Update(const tm* time){
-        // ID : 1 Updated @ 18:27:36
+    virtual void Update(const tm* time){
+        cout << "GC UPDATE" << endl;
         cout << "ID : " << id << " Updated @ " << put_time(time, "%H:%M:%S") << endl;
     };
     int GetId() {
@@ -25,3 +25,5 @@ public:
     };
 };
 
+// Initialize static member outside the class definition
+int GameComponent::instances = 0;
